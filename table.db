@@ -1,0 +1,25 @@
+<?php
+   $sn="localhost";
+   $un="root";
+   $pwd="5181";
+   $db="sports_management_system";
+   $con=mysqli_connect($sn,$un,$pwd,$db);
+
+   if(! $con ) {
+      die('Could not connect: ' . mysql_error());
+   }
+   $q="create table detail(name varchar(20) NOT NULL,department varchar(20) NOT NULL, rollno int(10) NOT NULL, equipment varchar(10) NOT NULL,quantity int(2) NOT NULL, status varchar(10),obtained_date varchar(50),obtained_time varchar(50)";
+   if(mysqli_query($con,$q)){
+     $my=mysqli_insert_id($con);
+     echo(" DATA INSERTED <SAVED>");
+     
+   }
+   $s="create table verify(rollno int(10) NOT NULL,status varchar(10),returned_date varchar(50),returned_time varchar(50)) ";
+        if(mysqli_query($con,$s)){
+          $my=mysqli_insert_id($con);
+          echo(" DATA INSERTED <SAVED>");
+     
+
+   }
+     
+ ?>
